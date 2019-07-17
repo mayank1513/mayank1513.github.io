@@ -59,6 +59,12 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
 
+.mb-3 a{
+  white-space: nowrap;
+}
+.mb-2 a{
+  white-space: nowrap;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -76,7 +82,6 @@ body {
 [tabindex="-1"]:focus {
   outline: 0 !important;
 }
-
 hr {
   box-sizing: content-box;
   height: 0;

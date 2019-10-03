@@ -508,6 +508,15 @@ mark,
   text-transform: uppercase;
 }
 
+.save-btn{
+  text-align: center;
+  position:fixed;
+	height:25px;
+  bottom:20px;
+  right: 0px;
+  left: 0px;
+	text-align:center;
+}
 .float1{
 	position:fixed;
 	width:140px;

@@ -765,19 +765,9 @@
 		    </div><!--//resume-body-->
 	    </div>
     </article>  
-    <script>
-		var v = document.getElementsByClassName('fa-container');
-		// var v = document.getElementById("header");
-		var i = 0, x = ['#80422F', '#328998'];
-		v[v.length-1].style.setProperty('--bg', '#22A162');
-		var v = document.getElementById('scholar');
-		// setInterval(function(){
-		// 	v.style.setProperty('--bg', x[i]);			
-		// 	i = (i+1)%2;
-		// }, 400);
-	</script>
-	<div style="text-align: center; margin-bottom: 50px">
-		<a class="badge-primary badge-pill" href="https://www.sejda.com/html-to-pdf?save-link" target="_blank">Save to PDF</a>
+    <div class="save-btn">
+		<a class="badge-primary badge-pill" style="padding-top: 5px; padding-bottom: 5px; 
+		padding-left: 15px; padding-right: 15px" href="https://www.sejda.com/html-to-pdf?save-link" target="_blank">Save to PDF</a>
 	</div>
 
 	<a href="https://www.upwork.com/o/profiles/users/_~0142999d8b15001517/" class="float" target="_blank">
@@ -793,6 +783,28 @@
 			</i>
 		<span class="float1">Hire me on Upwork</span>
 	</a>
+
+	<script>
+		window.onscroll = function () {
+			var elem = document.getElementsByClassName('save-btn')[0]
+			if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 120){
+				elem.style.visibility = "visible"
+				var op = 1 - (document.body.offsetHeight - window.innerHeight - window.scrollY)/120
+				elem.style.opacity = op
+			} else {
+				elem.style.visibility = "hidden"
+			}
+		}
+		var v = document.getElementsByClassName('fa-container');
+		// var v = document.getElementById("header");
+		var i = 0, x = ['#80422F', '#328998'];
+		v[v.length - 1].style.setProperty('--bg', '#22A162');
+		var v = document.getElementById('scholar');
+			// setInterval(function(){
+			// 	v.style.setProperty('--bg', x[i]);			
+			// 	i = (i+1)%2;
+			// }, 400);
+	</script>
 </body>
 </html> 
 

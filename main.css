@@ -508,6 +508,38 @@ mark,
   text-transform: uppercase;
 }
 
+.float1{
+	position:fixed;
+	width:140px;
+	height:25px;
+	bottom:110px;
+	right:0px;
+	background-color:#fff;
+  visibility: hidden;
+	border-radius:5px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+.float:hover .float1{
+  visibility: visible;
+}
+ 
+.k-icon:hover,
+.k-icon:focus {
+  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
 .blockquote {
   margin-bottom: 1rem;
   font-size: 1.25rem;

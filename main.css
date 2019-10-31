@@ -42,6 +42,16 @@
           margin-left: 10px;
           /* background-color: var(--bg); */
 }
+#upwork {
+  padding-left: 5px;
+  padding-right: 0px;
+  /* background-color: white; */
+  
+	background-color:#fff;
+	border-radius:5px;
+	text-align:center;
+	box-shadow: 1px 1px 2px #999;
+}
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -508,6 +518,15 @@ mark,
   text-transform: uppercase;
 }
 
+.background{
+  object-fit: cover;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  position:fixed;
+  overflow: hidden;
+  justify-content: center;
+}
 .save-btn{
   text-align: center;
   position:fixed;
@@ -515,7 +534,6 @@ mark,
   bottom:20px;
   right: 0px;
   left: 0px;
-	text-align:center;
 }
 .float1{
 	position:fixed;

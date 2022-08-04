@@ -1,0 +1,7 @@
+{
+  "hosting": {
+    "public": "docs",
+    "site": "mayank-chaudhari",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+  }
+}

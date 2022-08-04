@@ -3,6 +3,7 @@ import Image from "next/image";
 import stars from "/assets/stars.jpg";
 import research from "/assets/research.jpg";
 import edu from "/assets/edu.jpg";
+import { useEffect } from "react";
 
 const StyledBackground = styled.div`
   &,
@@ -47,6 +48,15 @@ const StyledBackground = styled.div`
 `;
 
 export default function Background({ bg }) {
+  useEffect(() => {
+    if (!bg) return;
+    const el = document.querySelector(`.${bg}.lazy`);
+    if (el) {
+      (el.children[0] as HTMLVideoElement).load();
+      (el.children[1] as HTMLVideoElement).load();
+      el.classList.remove("lazy");
+    }
+  }, [bg]);
   return (
     <StyledBackground>
       {[
@@ -66,7 +76,7 @@ export default function Background({ bg }) {
           return (
             <div
               key={cls}
-              className={`bg ${cls}`}
+              className={`bg ${cls} lazy`}
               style={{ opacity: bg == cls ? 1 : 0 }}
             >
               <video
@@ -77,12 +87,24 @@ export default function Background({ bg }) {
                 controls={false}
                 className="cover"
               >
-                <source src={`/${cls}.webm`} type="video/webm" />
-                <source src={`/${cls}.mp4`} type="video/mp4" />
+                <source
+                  src={bg == cls ? `/${cls}.webm` : null}
+                  type="video/webm"
+                />
+                <source
+                  src={bg == cls ? `/${cls}.mp4` : null}
+                  type="video/mp4"
+                />
               </video>
               <video autoPlay loop muted playsInline className="contain">
-                <source src={`/${cls}.webm`} type="video/webm" />
-                <source src={`/${cls}.mp4`} type="video/mp4" />
+                <source
+                  src={bg == cls ? `/${cls}.webm` : null}
+                  type="video/webm"
+                />
+                <source
+                  src={bg == cls ? `/${cls}.mp4` : null}
+                  type="video/mp4"
+                />
               </video>
             </div>
           );

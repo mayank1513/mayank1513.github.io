@@ -11,10 +11,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npm i && npm run export && git checkout master && git commit -m ci && git push origin master
+      - run: npm i && npm run export
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_KRISHNA_APPS }}"
           channelId: live
           projectId: krishna-apps
+
+      - name: Save to GitHub
+        run: |
+          git config --global user.name "Mayank"
+          git config --global user.email "mayank-automate@noreply.github.com"
+          git fetch
+          git checkout master
+          git add .
+          git status
+          git commit -m "build to docs"
+          git push origin master
